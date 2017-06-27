@@ -17,15 +17,19 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.scss/,
+                test: /\.css$/,
                 loader: 'style-loader!css-loader!sass-loader'
             }
         ]
     },
     output: {
         path: 'src',
-        filename: 'js/bundle.min.js'
+        filename: 'js/bundle.min.js',
+        publicPath:'/'
     },
+    // devServer:{
+    //   historyApiFallback: true
+    // },
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin()
     ]
